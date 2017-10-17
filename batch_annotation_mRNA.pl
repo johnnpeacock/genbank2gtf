@@ -1,9 +1,7 @@
 #!/usr/bin/perl -w
 #############################################
-#Author: Jiang Li
-#email:  riverlee2008@gmail.com
-#Creat Time: Tue 23 Oct 2012 01:37:54 PM CDT
-#Vanderbilt Center for Quantitative Sciences
+#Author: John Peacock
+#email:  johnnpeacock@gmail.com
 #############################################
 use strict;
 use warnings;
@@ -32,5 +30,5 @@ foreach my $f (@files){
     $chr=~s/\.gb//g;
     $chr=~s/Chr/chr/g;
     print $chr,"\n";
-    `perl genbank2gtf_mRNA.pl  $f $chr>$chr_mRNA.gtf`;
+    `perl genbank2gtf_mRNA.pl  $f $chr>${chr}_mRNA.gtf`;
 }
