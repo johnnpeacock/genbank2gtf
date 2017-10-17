@@ -1,9 +1,7 @@
 #!/usr/bin/perl
 #############################################
-#Author: Jiang Li
-#email:  riverlee2008@gmail.com
-#Creat Time: Tue 23 Oct 2012 01:37:54 PM CDT
-#Vanderbilt Center for Quantitative Sciences
+#Author: John Peacock
+#email:  johnnpeacock@gmail.com
 #############################################
 use strict;
 use warnings;
@@ -38,7 +36,7 @@ foreach my $f (@files){
         my $p=$_;
         print LOG "\t$p\t";
         my $out="NP/$p.gb";
-        my $comm = "wget \"http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=$p&rettype=gb&retmode=text\" -O $out";
+        my $comm = "wget \"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=protein&id=$p&rettype=gb&retmode=text\" -O $out --no-check-certificate";
         
         if(-s $out){
             print LOG "YES\n";
